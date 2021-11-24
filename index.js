@@ -1,9 +1,18 @@
-function superbowlWin(recordArray) {
-    for (const record of recordArray) {
-        if (record.result === 'W') {
-            return record.year;
-        }
-    }
+
+
+// function superbowlWin(recordArray) {
+//     if (recordArray.result === 'W') {
+//         return recordArray.year;
+//     }
+// }
+
+const superbowlWin = (record) => {
+    // iterate over record array
+    const firstWin = record.find(season => {
+        // for reaach object (element) return the first instance where record equals 'W'
+        return season.result === 'W';
+    });
+
+    return !!firstWin ? firstWin.year : firstWin;
 }
 
-  record.find(superbowlWin);
